@@ -60,6 +60,24 @@ void Matop3(){
     waitKey();
     destroyAllWindows();
 }
+void Matop4(){
+    Mat mat1 = Mat::zeros(3,4,CV_8UC1);
+    
+    for(int j = 0; j < mat1.rows; j++) {
+        for (int i = 0; i < mat1.cols; i++) {
+            mat1.at<uchar>(j, i)++;
+        }
+    }
+    
+    for(int j = 0; j < mat1.rows; j++) {
+        uchar* p = mat1.ptr<uchar>(j);
+        for (int i = 0; i < mat1.cols; i++){
+            p[i]++;
+        }
+    }
+
+}
+
 int main(){
     Matop3();
     return 0;
