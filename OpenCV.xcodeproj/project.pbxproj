@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		825DC6DF2AB15BE300C2E0FE /* Mat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 825DC6DE2AB15BE300C2E0FE /* Mat.cpp */; };
+		825DC6E82ABA994000C2E0FE /* video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 825DC6E72ABA994000C2E0FE /* video.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +25,8 @@
 /* Begin PBXFileReference section */
 		825DC6DE2AB15BE300C2E0FE /* Mat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mat.cpp; sourceTree = "<group>"; };
 		825DC6E22AB7D6B700C2E0FE /* dog.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = dog.bmp; sourceTree = "<group>"; };
+		825DC6E42ABA877300C2E0FE /* vecScalar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vecScalar.cpp; sourceTree = "<group>"; };
+		825DC6E72ABA994000C2E0FE /* video.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = video.cpp; sourceTree = "<group>"; };
 		8294C9D02AAEAD300058E4B3 /* OpenCV */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenCV; sourceTree = BUILT_PRODUCTS_DIR; };
 		8294C9D32AAEAD300058E4B3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8294C9DA2AAEAEE30058E4B3 /* OpenCV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenCV.entitlements; sourceTree = "<group>"; };
@@ -42,9 +44,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		825DC6E62ABA992200C2E0FE /* cp04 */ = {
+			isa = PBXGroup;
+			children = (
+				825DC6E72ABA994000C2E0FE /* video.cpp */,
+			);
+			path = cp04;
+			sourceTree = "<group>";
+		};
 		8294C9C72AAEAD300058E4B3 = {
 			isa = PBXGroup;
 			children = (
+				825DC6E62ABA992200C2E0FE /* cp04 */,
 				8294C9DB2AAEAF8B0058E4B3 /* cp03 */,
 				8294C9D22AAEAD300058E4B3 /* OpenCV */,
 				8294C9D12AAEAD300058E4B3 /* Products */,
@@ -74,6 +85,7 @@
 				825DC6E22AB7D6B700C2E0FE /* dog.bmp */,
 				8294C9DC2AAEAFB50058E4B3 /* cp03.cpp */,
 				825DC6DE2AB15BE300C2E0FE /* Mat.cpp */,
+				825DC6E42ABA877300C2E0FE /* vecScalar.cpp */,
 			);
 			path = cp03;
 			sourceTree = "<group>";
@@ -135,7 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				825DC6DF2AB15BE300C2E0FE /* Mat.cpp in Sources */,
+				825DC6E82ABA994000C2E0FE /* video.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

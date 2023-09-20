@@ -77,7 +77,9 @@ void Matop4(){
     }
 
 }
-
+void Matop5(){
+    int p = 134;
+}
 int main(){
     Matop3();
     return 0;
