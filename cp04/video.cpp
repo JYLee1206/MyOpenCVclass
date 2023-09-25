@@ -45,7 +45,102 @@ void camera_in(){
     destroyAllWindows();
 }
 
+void camera_in_video_out(){
+    VideoCapture cap(0);
+    
+    if (!cap.isOpened()){
+        cerr << "Camera open failed!" << endl;
+        return;
+    }
+    
+    int w = cvRound(cap.get(CAP_PROP_FRAME_WIDTH));
+    int h = cvRound(cap.get(CAP_PROP_FRAME_HEIGHT));
+    double fps = cap.get(CAP_PROP_FPS);
+    cout << "Frame width: " << w << endl;
+    cout << "Frame height: " << h << endl;
+    cout << "Frame fps: " << fps << endl;
+    int fourcc = VideoWriter::fourcc('D', 'I', 'V', 'X');
+    int delay = cvRound(1000/fps);
+    
+    VideoWriter outputVideo("output.avi", fourcc, fps, Size(w,h));
+    
+    if (!cap.isOpened()) {
+        cerr << "Camera open fialed!" << endl;
+        return;
+    }
+    Mat frame, inversed;
+    while (true) {
+        cap >> frame;
+        if (frame.empty())
+            break;
+        
+        inversed = ~frame;
+        
+        imshow("frame", frame);
+        imshow("inversed", inversed);
+        
+        if (waitKey(10) == 27)
+            break;
+        
+    }
+    destroyAllWindows();
+}
+
+void drawLines()
+{
+    Mat img(400, 400, CV_8UC3, Scalar(255, 255, 255));
+    
+    line(img, Point(50, 50), Point(200, 50), Scalar(0, 0, 255));
+    line(img, Point(50, 100), Point(200, 100), Scalar(255, 0, 255), 3);
+    line(img, Point(50, 150), Point(200, 150), Scalar(255, 0, 0), 10);
+    
+    line(img, Point(250, 50), Point(350, 100), Scalar(0, 0, 255), 1, LINE_4);
+    line(img, Point(250, 70), Point(350, 120), Scalar(255, 0, 255), 1, LINE_8);
+    line(img, Point(250, 90), Point(350, 140), Scalar(255, 0, 0), 1, LINE_AA);
+    
+    arrowedLine(img, Point(50, 200), Point(150, 200), Scalar(0, 0, 255), 1);
+    arrowedLine(img, Point(50, 250), Point(350, 250), Scalar(255, 0, 255), 1);
+    arrowedLine(img, Point(50, 300), Point(350, 300), Scalar(255, 0, 0), 1, LINE_8, 0, 0.05);
+
+    drawMarker(img, Point(50, 350), Scalar(0,0,255),MARKER_CROSS);
+    drawMarker(img, Point(100, 350), Scalar(0,0,255),MARKER_TILTED_CROSS);
+    drawMarker(img, Point(150, 350), Scalar(0,0,255),MARKER_STAR);
+    drawMarker(img, Point(200, 350), Scalar(0,0,255),MARKER_DIAMOND);
+    drawMarker(img, Point(250, 350), Scalar(0,0,255),MARKER_SQUARE);
+    drawMarker(img, Point(300, 350), Scalar(0,0,255),MARKER_TRIANGLE_UP);
+    drawMarker(img, Point(350, 350), Scalar(0,0,255),MARKER_TRIANGLE_DOWN);
+    
+    imshow("img", img);
+    waitKey(0);
+    
+    destroyAllWindows();
+}
+
+void drawPolys()
+{
+    Mat img(400, 400, CV_8UC3, Scalar(255,255,255));
+    
+    rectangle(img, Rect(50, 50, 100, 50), Scalar(0, 0, 255), 2);
+    rectangle(img, Rect(50, 150, 100, 50), Scalar(0, 0, 128), -1);
+    
+    circle(img, Point(300, 120), 30, Scalar(255, 255, 0), -1, LINE_AA);
+    circle(img, Point(300, 120), 60, Scalar(255, 0, 0), 3, LINE_AA);
+    
+    ellipse(img, Point(120, 300), Size(60, 30), 20, 0, 270, Scalar(255, 255, 0), -1, LINE_AA);
+    ellipse(img, Point(120, 300), Size(100, 50), 20, 0, 360, Scalar(0, 255, 0), 2, LINE_AA);
+    
+    vector<Point> pts;
+    pts.push_back(Point(250, 250)); pts.push_back(Point(300, 250));
+    pts.push_back(Point(300, 300)); pts.push_back(Point(350, 300));
+    pts.push_back(Point(350, 350)); pts.push_back(Point(250, 350));
+    polylines(img, pts, true, Scalar(255, 0, 255), 2);
+    
+    imshow("img", img);
+    waitKey(0);
+    
+    destroyAllWindows();
+}
 int main(){
-    camera_in();
+    drawPolys();
     return 0;
 }
