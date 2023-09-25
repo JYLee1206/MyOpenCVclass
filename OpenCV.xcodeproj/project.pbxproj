@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		825DC6E82ABA994000C2E0FE /* video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 825DC6E72ABA994000C2E0FE /* video.cpp */; };
+		82081FEF2AC1210C00C3BA75 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82081FEE2AC1210C00C3BA75 /* event.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		82081FEE2AC1210C00C3BA75 /* event.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = event.cpp; sourceTree = "<group>"; };
 		825DC6DE2AB15BE300C2E0FE /* Mat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mat.cpp; sourceTree = "<group>"; };
 		825DC6E22AB7D6B700C2E0FE /* dog.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = dog.bmp; sourceTree = "<group>"; };
 		825DC6E42ABA877300C2E0FE /* vecScalar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vecScalar.cpp; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				825DC6E72ABA994000C2E0FE /* video.cpp */,
+				82081FEE2AC1210C00C3BA75 /* event.cpp */,
 			);
 			path = cp04;
 			sourceTree = "<group>";
@@ -147,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				825DC6E82ABA994000C2E0FE /* video.cpp in Sources */,
+				82081FEF2AC1210C00C3BA75 /* event.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
